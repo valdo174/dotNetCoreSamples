@@ -1,0 +1,39 @@
+﻿@model IEnumerable<PartyInvites.Models.GuestInfo>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>GuestList</title>
+</head>
+<body>
+    <h1>Guest list:</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Attended?</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (PartyInvites.Models.GuestInfo info in Model)
+            {
+                <tr>
+                    <td>@info.Name</td>
+                    <td>@info.Phone</td>
+                    <td>@info.Email</td>
+                    <td>@info.WillAttend</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>

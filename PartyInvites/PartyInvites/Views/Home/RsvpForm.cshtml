@@ -13,44 +13,34 @@
     <title>RsvpFrom</title>
 </head>
 <body>
+     <form asp-action="RsvpForm" method="post">
+         <p>
+             <label asp-for="Name" class="control-label">Name</label>
+             <input asp-for="Name" class="form-control" />
+         </p>
 
-    <h4>GuestInfo</h4>
-    <hr />
-    <div class="row">
-        <div class="col-md-4">
-            <form asp-action="RsvpFrom">
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <div class="form-group">
-                    <label asp-for="Name" class="control-label">Name</label>
-                    <input asp-for="Name" class="form-control" />
-                    <span asp-validation-for="Name" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Phone" class="control-label">Phone</label>
-                    <input asp-for="Phone" class="form-control" />
-                    <span asp-validation-for="Phone" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Email" class="control-label">Email</label>
-                    <input asp-for="Email" class="form-control" />
-                    <span asp-validation-for="Email" class="text-danger"></span>
-                </div>
-                <label>Will you attend?</label>
-                <select asp-for="WillAttend">
-                    <option value="">Choose an option</option>
-                    <option value="true">Yes, I'll be there</option>
-                    <option value="flase">No, I can't come</option>
-                </select>
-                <div class="form-group">
-                    <input type="submit" value="Submit" class="btn btn-default" />
-                </div>
-            </form>
-        </div>
-    </div>
+         <p>
+             <label asp-for="Phone" class="control-label">Phone</label>
+             <input asp-for="Phone" class="form-control" />
+         </p>
 
-    <div>
-        <a asp-action="Index">Back to Invite</a>
-    </div>
+         <p>
+             <label asp-for="Email" class="control-label">Email</label>
+             <input asp-for="Email" class="form-control" />
+         </p>
 
+         <p>
+             <label>Will you attend?</label>
+             <select asp-for="WillAttend">
+                 <option value="">Choose an option</option>
+                 <option value="true">Yes, I'll be there</option>
+                 <option value="false">No, I can't come</option>
+             </select>
+         </p>
+         
+         <button type="submit">Submit RSPV</button>
+     </form>
+
+     <a asp-action="Index">Back to Invite</a>
 </body>
 </html>
