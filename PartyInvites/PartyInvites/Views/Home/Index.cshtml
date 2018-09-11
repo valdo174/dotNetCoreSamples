@@ -1,4 +1,4 @@
-﻿
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @{
     Layout = null;
 }
@@ -13,8 +13,8 @@
 <body>
     <h1>@ViewBag.Greetings (from view)</h1>
     <p>
-        What about crazy party tonight? 
-    </p> <br/>
-    @Html.ActionLink("RSVP Now", "RsvpForm")
+        <h4>What about crazy party tonight?</h4>
+    </p> <br />
+    <a asp-action="RsvpForm">RSVP Now</a>
 </body>
 </html>
