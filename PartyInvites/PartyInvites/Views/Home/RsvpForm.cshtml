@@ -11,37 +11,38 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>RsvpFrom</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
 </head>
 <body>
-    <div asp-validation-summary="All"></div>
-     <form asp-action="RsvpForm" method="post">
-         <p>
-             <label asp-for="Name" class="control-label">Name</label>
-             <input asp-for="Name" class="form-control" />
-         </p>
+    <div class="panel panel-success">
+        <div class="panel-heading text-center"><h4>RSVP</h4></div>
+        <div class="panel-body">
+            <div asp-validation-summary="All"></div>
+            <form asp-action="RsvpForm" method="post">
+                <label asp-for="Name" class="control-label">Name</label>
+                <input asp-for="Name" class="form-control" />
 
-         <p>
-             <label asp-for="Phone" class="control-label">Phone</label>
-             <input asp-for="Phone" class="form-control" />
-         </p>
+                <label asp-for="Phone" class="control-label">Phone</label>
+                <input asp-for="Phone" class="form-control" />
 
-         <p>
-             <label asp-for="Email" class="control-label">Email</label>
-             <input asp-for="Email" class="form-control" />
-         </p>
+                <label asp-for="Email" class="control-label">Email</label>
+                <input asp-for="Email" class="form-control" />
 
-         <p>
-             <label>Will you attend?</label>
-             <select asp-for="WillAttend">
-                 <option value="">Choose an option</option>
-                 <option value="true">Yes, I'll be there</option>
-                 <option value="false">No, I can't come</option>
-             </select>
-         </p>
-         
-         <button type="submit">Submit RSPV</button>
-     </form>
+                <div class="form-group">
+                    <label>Will you attend?</label>
+                    <select class="form-control" asp-for="WillAttend">
+                        <option value="">Choose an option</option>
+                        <option value="true">Yes, I'll be there</option>
+                        <option value="false">No, I can't come</option>
+                    </select>
+                </div>
+                <button class="btn btn-primary" type="submit">
+                    Submit RSPV
+                </button>
+            </form>
 
-     <a asp-action="Index">Back to Invite</a>
+            <a asp-action="Index">Back to Invite</a>
+        </div>        
+    </div>
 </body>
 </html>

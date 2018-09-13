@@ -9,12 +9,15 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
 </head>
 <body>
-    <h1>@ViewBag.Greetings (from view)</h1>
-    <p>
-        <h4>What about crazy party tonight?</h4>
-    </p> <br />
-    <a asp-action="RsvpForm">RSVP Now</a>
+    <div class="text-center">
+        <h1>@ViewBag.Greetings (from view)</h1>
+        <p>
+            <h3>What about crazy party tonight?</h3>
+        </p> <br />
+        <a class="btn btn-primary" asp-action="RsvpForm">RSVP Now</a>
+    </div>
 </body>
 </html>
