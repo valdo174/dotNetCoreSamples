@@ -9,19 +9,11 @@ namespace LanguageFeatures.Controllers
 {
 	public class HomeController : Controller
 	{
-		public IActionResult Index()
+		public async Task<long?> Index()
 		{
-			List<string> results = new List<string>();
+			long? contentLength = await MyAsyncMethods.GetPageLength();
 
-			foreach(Product p in Product.GetProducts())
-			{
-				string name = p?.Name;
-				decimal? price = p?.Price;
-
-				results.Add(string.Format("Name: {0}, Price: {1}", name, price));
-			}
-
-			return View(results);
+			return contentLength;
 		}
 	}
 }

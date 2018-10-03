@@ -1,0 +1,26 @@
+﻿@model IEnumerable<chapter7.Models.Product>
+
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+    <table>
+        <thead>
+            <tr><td>Name</td><td>Price</td></tr>
+        </thead>
+        <tbody>
+            @foreach(var m in Model)
+            {
+                <tr>
+                    <td>@m?.Name</td><td>@m?.Price</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>
