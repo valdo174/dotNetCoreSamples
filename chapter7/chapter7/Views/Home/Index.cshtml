@@ -6,21 +6,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+    <link rel="stylesheet" href="~/lib/css/bootstrap.min.css" />
 </head>
-<body>
-    <table>
-        <thead>
+<body class="panel-body">
+    <h3 class="text-center">Products</h3>
+    <table class="table table-bordered table-striped">
+        <thead >
             <tr><td>Name</td><td>Price</td></tr>
         </thead>
         <tbody>
-            @foreach(var m in Model)
+            @foreach (var m in Model)
             {
                 <tr>
-                    <td>@m?.Name</td><td>@m?.Price</td>
+                    <td>@m?.Name</td>
+                    <td>@($"{m?.Price:c2}")</td>
                 </tr>
             }
         </tbody>
     </table>
+    @Html.ActionLink("add product", "AddProduct", "Home")   
 </body>
 </html>
